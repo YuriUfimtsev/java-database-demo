@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface BookRepository extends JpaRepository<Book, Long> {
 
@@ -19,6 +20,8 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     List<Book> findByAuthorNameOrderByTitle(String authorName);   // путь author.name, будет join
 
     long countByAuthorId(Long authorId);
+
+    Optional<Book> findByIsbn(String isbn);
 
     boolean existsByTitle(String title);
 

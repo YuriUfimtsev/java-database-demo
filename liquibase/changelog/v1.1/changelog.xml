@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="v1.1-add-isbn" author="yu.ufimtsev">
+        <sqlFile path="sql/01-add-isbn.sql" relativeToChangelogFile="true"/>
+        <rollback>
+            <sqlFile path="rollback/01-add-isbn.sql" relativeToChangelogFile="true"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="v1.1-fill-isbn" author="yu.ufimtsev">
+        <sqlFile path="sql/02-fill-isbn.sql" relativeToChangelogFile="true"/>
+        <rollback>
+            <sqlFile path="rollback/02-fill-isbn.sql" relativeToChangelogFile="true"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

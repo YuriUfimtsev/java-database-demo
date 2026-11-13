@@ -10,5 +10,6 @@
         и выполняет только те changeSet, которых ещё нет в таблице databasechangelog.
     -->
     <include file="v1.0/changelog.xml" relativeToChangelogFile="true"/>
+    <include file="v1.1/changelog.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
