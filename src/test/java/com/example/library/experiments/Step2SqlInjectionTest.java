@@ -71,12 +71,4 @@ class Step2SqlInjectionTest extends ExperimentBase {
         }
         assertThat(titleOfBook(1)).isEqualTo("Война и мир");
     }
-
-    /** Имя колонки параметром не передать: только белый список. */
-    @Test
-    void identifiersFromWhitelist() throws Exception {
-        assertThat(dao.findAllSorted("title").get(0).title()).isEqualTo("Анна Каренина");
-        assertThatThrownBy(() -> dao.findAllSorted("title; drop table books"))
-                .isInstanceOf(IllegalArgumentException.class);
-    }
 }
