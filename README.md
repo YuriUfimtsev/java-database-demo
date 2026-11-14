@@ -84,8 +84,6 @@ git switch -c my-work stage-3-jpa
 После этого измените уже выполненный `v1.0/sql/01-create-tables.sql` и перезапустите приложение.
 Объясните, почему оно не стартует.
 
-Решение в ветке `practice-solution`:
-
 ```bash
 git diff main practice-solution
 ```
