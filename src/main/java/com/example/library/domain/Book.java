@@ -25,6 +25,10 @@ public class Book {
     @Column(unique = true, length = 17)
     private String isbn;
 
+    // Колонка добавлена миграцией liquibase/changelog/v1.2 (решение практики)
+    @Column(name = "published_year")
+    private Integer publishedYear;
+
     // У @ManyToOne по умолчанию fetch = EAGER. Явно делаем LAZY.
     // Эксперимент 4: поменяйте на EAGER и перезапустите Step4FetchTypeTest.
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -58,6 +62,14 @@ public class Book {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
+    }
+
+    public Integer getPublishedYear() {
+        return publishedYear;
+    }
+
+    public void setPublishedYear(Integer publishedYear) {
+        this.publishedYear = publishedYear;
     }
 
     public Author getAuthor() {
